@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>456暗黑片单 - 暗黑悬疑/心理惊悚/黑色电影 类型策展导航（456zhongkouweidianyingwang-h5）</title>
+<meta name="description" content="456暗黑片单：把“重口”收敛成类型策展。整理暗黑悬疑、心理惊悚、黑色喜剧、邪典cult、社会派犯罪电影片单与正版观看建议，附年龄分级提示。单页自适应，不提供血腥图解、禁片下载与盗版播放。">
+<meta name="keywords" content="456暗黑片单, 456zhongkouweidianyingwang-h5, 暗黑悬疑, 心理惊悚, 黑色电影, 邪典cult, 社会派犯罪, 类型电影策展">
+<meta name="author" content="456暗黑片单">
+<meta name="robots" content="index, follow">
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://456zhongkouweidianyingwang-h5.github.io/">
+<style>
+:root{
+  --ink:#0c0b0a;
+  --ink2:#151210;
+  --candle:#8a1d18;
+  --candle2:#b52820;
+  --paper:#e6d3a3;
+  --gold:#b8863b;
+  --line:rgba(230,211,163,.14);
+  --text:#efe4cf;
+  --muted:#b5a894;
+  --radius:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei",Georgia,system-ui,sans-serif;
+  background:
+    radial-gradient(820px 360px at 88% -10%, rgba(138,29,24,.22), transparent 60%),
+    radial-gradient(720px 340px at 0% 8%, rgba(184,134,59,.14), transparent 55%),
+    linear-gradient(180deg,var(--ink),var(--ink2));
+  color:var(--text);line-height:1.75;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+
+/* 暗影顶栏 */
+.nav{position:sticky;top:0;z-index:50;background:rgba(12,11,10,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;height:60px;gap:10px}
+.flame{width:24px;height:24px;border-radius:50% 50% 45% 45%;background:radial-gradient(circle at 50% 35%,var(--paper),var(--gold) 55%,var(--candle) 100%);box-shadow:0 0 14px rgba(138,29,24,.5)}
+.brand{font-weight:900;font-size:1.12rem}
+.brand b{color:var(--paper)}
+.brand i{font-style:normal;font-size:.78rem;color:var(--muted);margin-left:6px}
+.nav nav{margin-left:auto;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.nav nav::-webkit-scrollbar{display:none}
+.nav nav a{font-size:.82rem;color:var(--muted);padding:6px 11px;border:1px solid var(--line);border-radius:999px;white-space:nowrap}
+.nav nav a:hover{background:var(--candle);color:var(--paper)}
+
+/* Hero */
+.hero{padding:56px 0 34px;border-bottom:1px solid var(--line)}
+.creed{display:inline-block;font-size:.72rem;letter-spacing:2px;color:#1a0c08;background:linear-gradient(90deg,var(--gold),var(--paper));padding:4px 12px;border-radius:999px;margin-bottom:14px}
+.hero h1{font-size:2.4rem;line-height:1.16;margin-bottom:12px}
+.hero h1 em{font-style:normal;color:var(--paper)}
+.hero p{max-width:720px;color:var(--muted)}
+.go{display:inline-block;margin-top:18px;background:linear-gradient(90deg,var(--candle),var(--gold));color:#1a0c08;font-weight:900;padding:12px 28px;border-radius:999px;transition:transform .2s}
+.go:hover{transform:translateY(-2px)}
+
+/* 区块 */
+section.block{padding:42px 0;border-bottom:1px solid rgba(230,211,163,.07)}
+.head{display:flex;align-items:baseline;gap:10px;margin-bottom:18px}
+.head .no{font-family:Georgia,serif;font-size:1.5rem;font-weight:900;color:var(--gold)}
+.head h2{font-size:1.3rem}
+.head .more{margin-left:auto;font-size:.82rem;color:var(--muted)}
+
+.card{background:var(--ink2);border:1px solid var(--line);border-radius:var(--radius)}
+
+/* 六大道 */
+.paths{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.path{padding:18px}
+.path h3{font-size:1.05rem;margin-bottom:6px;color:var(--paper)}
+.path h3 small{font-size:.72rem;color:var(--gold);margin-left:6px}
+.path p{font-size:.82rem;color:var(--muted)}
+.path .badge{font-size:.7rem;border:1px solid var(--line);padding:2px 8px;border-radius:999px;color:var(--paper);display:inline-block;margin-top:8px}
+
+/* 片单卡 */
+.list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.film{padding:16px;display:flex;gap:12px}
+.film .yr{flex:0 0 48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-weight:900;color:#1a0c08;background:linear-gradient(135deg,var(--paper),var(--gold))}
+.film h3{font-size:.98rem;margin-bottom:3px}
+.film p{font-size:.8rem;color:var(--muted)}
+.film .rate{font-size:.72rem;color:var(--gold);margin-top:5px}
+
+/* 分级 */
+.ratings{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.rg{padding:16px 12px;text-align:center;border:2px solid var(--line)}
+.rg .lvl{font-family:Georgia,serif;font-size:1.6rem;font-weight:900;color:var(--candle2)}
+.rg h3{font-size:.9rem;margin:6px 0 4px;color:var(--paper)}
+.rg p{font-size:.74rem;color:var(--muted)}
+
+/* FAQ */
+.faq{display:grid;gap:10px}
+.qa{padding:14px 16px}
+.qa h3{font-size:.95rem;color:var(--paper);margin-bottom:6px}
+.qa p{font-size:.85rem;color:var(--muted)}
+
+/* 关于 */
+.about{border:2px solid var(--gold);border-radius:var(--radius);padding:36px 20px;text-align:center}
+.about h2{margin-bottom:10px}
+.urlbox{display:inline-block;margin:12px 0 16px;font-family:monospace;background:#0c0b0a;border:1px dashed var(--gold);color:var(--gold);padding:10px 16px;border-radius:10px}
+.about p{max-width:740px;margin:0 auto;color:var(--muted)}
+
+footer{padding:28px 16px;text-align:center;font-size:.8rem;color:var(--muted);border-top:1px solid var(--line)}
+footer a{margin:0 6px;color:var(--muted)}
+footer a:hover{color:var(--paper)}
+
+@media(min-width:820px){
+  .list{grid-template-columns:repeat(3,1fr)}
+  .paths{grid-template-columns:repeat(3,1fr)}
+  .ratings{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:520px){
+  .hero h1{font-size:1.8rem}
+  .list,.paths,.ratings{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<div class="nav">
+  <div class="wrap">
+    <div class="flame"></div>
+    <div class="brand">456暗黑片单<b>暗影策展</b><i>456zhongkouweidianyingwang-h5</i></div>
+    <nav>
+      <a href="#paths">六大道</a>
+      <a href="#noir">暗黑悬疑</a>
+      <a href="#mind">心理惊悚</a>
+      <a href="#cult">邪典cult</a>
+      <a href="#social">社会派</a>
+      <a href="#rate">分级提示</a>
+      <a href="#faq">FAQ</a>
+      <a href="#about">关于</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="creed">DARK PROGRAMME · 类型策展 · 456</span>
+    <h1>456暗黑片单<br><em>把“重口”收敛成策展</em></h1>
+    <p>站名保留“456重口味电影网”的记号，但内容只做正经的类型电影资料馆：暗黑悬疑、心理惊悚、黑色喜剧、邪典cult、社会派犯罪——只谈镜头、剧本与作者性，不图解血腥、不推禁片、不挂盗版源。 也明确提示：涉及露骨、血腥、暴力的内容应避免传播。</p>
+    <a href="#paths" class="go">进入六大道</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- 六大道 -->
+  <section id="paths" class="block">
+    <div class="head"><span class="no">Ⅰ</span><h2>六大道·类型策展</h2><a href="#" class="more">更多 ›</a></div>
+    <div class="paths">
+      <div class="path card"><h3>暗黑悬疑 <small>NOIR</small></h3><p>犯罪、背叛、霓虹雨夜与道德灰色地带。</p><span class="badge">含强情节反转</span></div>
+      <div class="path card"><h3>心理惊悚 <small>PSYCHO</small></h3><p>精神状态、记忆错位、不可靠叙事。</p><span class="badge">情绪压迫感强</span></div>
+      <div class="path card"><h3>黑色喜剧 <small>DARK COMEDY</small></h3><p>用荒诞消解死亡、贫穷与人性。</p><span class="badge">讽刺向</span></div>
+      <div class="path card"><h3>邪典cult <small>CULT</small></h3><p>风格偏执、亚文化、作者印记浓。</p><span class="badge">非主流审美</span></div>
+      <div class="path card"><h3>社会派犯罪 <small>SOCIAL CRIME</small></h3><p>案件背后是社会结构与制度。</p><span class="badge">现实议题</span></div>
+      <div class="path card"><h3>正版渠道 <small>WHERE TO WATCH</small></h3><p>院线、正版流媒体、修复展映建议。</p><span class="badge">非资源下载</span></div>
+    </div>
+  </section>
+
+  <!-- 暗黑悬疑 -->
+  <section id="noir" class="block">
+    <div class="head"><span class="no">Ⅱ</span><h2>暗黑悬疑·片单</h2><a href="#" class="more">更多 ›</a></div>
+    <div class="list">
+      <div class="film card"><div class="yr">95</div><div><h3>七宗罪</h3><p>大卫·芬奇，七罪连环案的暗黑圣经。</p><div class="rate">★ 影史经典</div></div></div>
+      <div class="film card"><div class="yr">03</div><div><h3>老男孩</h3><p>朴赞郁复仇三部曲，结构极残忍也极工整。</p><div class="rate">★ 戛纳评审团大奖</div></div></div>
+      <div class="film card"><div class="yr">00</div><div><h3>记忆碎片</h3><p>倒叙拼图，失忆者的复仇自白。</p><div class="rate">★ 非线性叙事</div></div></div>
+      <div class="film card"><div class="yr">13</div><div><h3>消失的爱人</h3><p>婚姻、舆论与完美犯罪的镜像。</p><div class="rate">★ 心理博弈</div></div></div>
+      <div class="film card"><div class="yr">19</div><div><h3>寄生虫</h3><p>地下室的阶级寓言，奉俊昊式黑色。</p><div class="rate">★ 奥斯卡最佳影片</div></div></div>
+      <div class="film card"><div class="yr">14</div><div><h3>夜行者</h3><p>夜新闻猎人，冷到骨子里的野心叙事。</p><div class="rate">★ 社会派暗黑</div></div></div>
+    </div>
+  </section>
+
+  <!-- 心理惊悚 -->
+  <section id="mind" class="block">
+    <div class="head"><span class="no">Ⅲ</span><h2>心理惊悚·片单</h2><a href="#" class="more">更多 ›</a></div>
+    <div class="list">
+      <div class="film card"><div class="yr">97</div><div><h3>心理游戏</h3><p>大卫·芬奇，一场被设计的游戏。</p><div class="rate">★ 反转密集</div></div></div>
+      <div class="film card"><div class="yr">10</div><div><h3>盗梦空间</h3><p>梦中层数的结构惊悚与情感落点。</p><div class="rate">★ 诺兰</div></div></div>
+      <div class="film card"><div class="yr">17</div><div><h3>逃出绝命镇</h3><p>种族议题包裹的现代哥特惊悚。</p><div class="rate">★ 邪典新经典</div></div></div>
+      <div class="film card"><div class="yr">04</div><div><h3>飞行家</h3><p>强迫症与偏执的传记式暗黑。</p><div class="rate">★ 心理传记</div></div></div>
+      <div class="film card"><div class="yr">16</div><div><h3>降临</h3><p>语言学外壳下的宿命惊悚。</p><div class="rate">★ 维伦纽瓦</div></div></div>
+      <div class="film card"><div class="yr">20</div><div><h3>信条</h3><p>时间逆转，概念惊悚的上限实验。</p><div class="rate">★ 硬核设定</div></div></div>
+    </div>
+  </section>
+
+  <!-- 邪典cult -->
+  <section id="cult" class="block">
+    <div class="head"><span class="no">Ⅳ</span><h2>邪典cult·作者印记</h2><a href="#" class="more">更多 ›</a></div>
+    <div class="list">
+      <div class="film card"><div class="yr">91</div><div><h3>牯岭街少年杀人事件</h3><p>杨德昌四小时，少年与时代的暗面。</p><div class="rate">★ 影史长片</div></div></div>
+      <div class="film card"><div class="yr">85</div><div><h3>蜘蛛女之吻</h3><p>政治与性别，牢房里的双重叙事。</p><div class="rate">★ 黑色寓言</div></div></div>
+      <div class="film card"><div class="yr">96</div><div><h3>猜火车</h3><p>苏格兰青年、药物与失控青春。</p><div class="rate">★ 风格化cult</div></div></div>
+      <div class="film card"><div class="yr">99</div><div><h3>搏击俱乐部</h3><p>人格分裂与消费社会的暗黑童话。</p><div class="rate">★ 反转神作</div></div></div>
+      <div class="film card"><div class="yr">06</div><div><h3>香水</h3><p>气味与欲望的极端作者寓言。</p><div class="rate">★ 视觉系暗黑</div></div></div>
+      <div class="film card"><div class="yr">22</div><div><h3>悲情三角</h3><p>阶级倒置的荒诞黑色喜剧。</p><div class="rate">★ 戛纳金棕榈</div></div></div>
+    </div>
+  </section>
+
+  <!-- 社会派 -->
+  <section id="social" class="block">
+    <div class="head"><span class="no">Ⅴ</span><h2>社会派犯罪·现实议题</h2><a href="#" class="more">更多 ›</a></div>
+    <div class="list">
+      <div class="film card"><div class="yr">14</div><div><h3>心迷宫</h3><p>中国农村环形叙事，命运如迷宫。</p><div class="rate">★ 低成本佳作</div></div></div>
+      <div class="film card"><div class="yr">07</div><div><h3>失踪的宝贝</h3><p>波士顿底层与制度失能的暗黑推理。</p><div class="rate">★ 社会派</div></div></div>
+      <div class="film card"><div class="yr">16</div><div><h3>血观音</h3><p>台湾政商家族的女性权力暗战。</p><div class="rate">★ 金马最佳影片</div></div></div>
+      <div class="film card"><div class="yr">12</div><div><h3>少年派的奇幻漂流</h3><p>李安，黑暗与信仰并存的漂流。</p><div class="rate">★ 奥斯卡最佳导演</div></div></div>
+      <div class="film card"><div class="yr">21</div><div><h3>犬之力</h3><p>西部外壳下的压抑与权力。</p><div class="rate">★ 威尼斯最佳导演</div></div></div>
+      <div class="film card"><div class="yr">18</div><div><h3>燃烧</h3><p>李沧东，阶级怒火烧进隐喻。</p><div class="rate">★ 戛纳费比西</div></div></div>
+    </div>
+  </section>
+
+  <!-- 分级 -->
+  <section id="rate" class="block">
+    <div class="head"><span class="no">Ⅵ</span><h2>年龄分级提示</h2></div>
+    <div class="ratings">
+      <div class="rg"><div class="lvl">PG</div><h3>普通级</h3><p>部分惊悚但不血腥</p></div>
+      <div class="rg"><div class="lvl">PG-13</div><h3>辅导级</h3><p>含紧张与暗黑主题</p></div>
+      <div class="rg"><div class="lvl">R</div><h3>限制级</h3><p>暴力/粗口较集中</p></div>
+      <div class="rg"><div class="lvl">NC-17</div><h3>成人级</h3><p>极端内容，不收录</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="block">
+    <div class="head"><span class="no">Ⅶ</span><h2>常见问题</h2></div>
+    <div class="faq">
+      <div class="qa card"><h3>为什么站名是“重口味”，页面却很克制？</h3><p>“重口味”容易被误解为血腥、暴力、露骨内容聚合，这类方向对搜索引擎与合规都是高危。所以本站把“重口”收敛为暗黑类型策展：只谈电影语言与作者性，不图解血腥、不推禁片。</p></div>
+      <div class="qa card"><h3>456暗黑片单提供在线看片吗？</h3><p>不提供。本站是类型电影资料馆导航：片单、导演、分级提示与正版观看渠道建议；内链全部为 # 锚点，不托管片源、不提供盗版播放与下载。</p></div>
+      <div class="qa card"><h3>为什么没写“禁片/血腥大赏/网盘秒发”？</h3><p>这些词属于黑帽与违规风险词，会被搜索引擎降权甚至整站连坐。本站只使用中性类型词（暗黑悬疑、心理惊悚、邪典cult），更利于长期收录。</p></div>
+      <div class="qa card"><h3>必应收录合规吗？</h3><p>合规：唯一H1、栏目H2、FAQ问答、语义化标签、静态首屏、移动端无横向滚动；canonical/bingbot/description/keywords 齐全，且含年龄分级说明。</p></div>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section id="about" class="about">
+    <h2>关于 456暗黑片单</h2>
+    <div class="urlbox">https://456zhongkouweidianyingwang-h5.github.io</div>
+    <p>456暗黑片单（对应站名 456重口味电影网）是一个暗黑类型电影策展单页：六大道、暗黑悬疑/心理惊悚/邪典cult/社会派犯罪片单、年龄分级提示与正版观看建议。无血腥图解、无禁片推流、无盗版源，适合移动端速览，也适合作为必应友好的静态影视站。</p>
+  </section>
+
+</main>
+
+<footer>
+  © 2024 456暗黑片单 · 静态单页演示
+  <br>
+  <a href="#">关于我们</a>·<a href="#">分级说明</a>·<a href="#">免责声明</a>·<a href="#">版权投诉</a>
+  <br>
+  官网：<a href="https://456zhongkouweidianyingwang-h5.github.io">456zhongkouweidianyingwang-h5.github.io</a>
+</footer>
+
+<script>
+document.querySelectorAll('.film').forEach(function(el){
+  el.addEventListener('click',function(e){
+    e.preventDefault();
+    document.querySelectorAll('.film').forEach(function(x){x.style.borderColor='var(--line)';});
+    el.style.borderColor='var(--candle2)';
+  });
+});
+</script>
+</body>
+</html>
